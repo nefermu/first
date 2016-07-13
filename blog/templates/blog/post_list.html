@@ -1,13 +1,23 @@
-<!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-      <title>Deneme Blog</title>
+    <head>
+        <title>Django Girls blog</title>
+    </head>
+    <body>
+        <div>
+            <h1><a href="">Django Girls Blog</a></h1>
 
-  </head>
-  <body>
-    <p>Merhaba!</p>
-    <p>Yes </p>
 
-  </body>
+
+        </div>
+
+        {% for post in posts %}
+    <div>
+        <p>published: {{ post.yayinlama_tarihi }}</p>
+        <h1><a href="">{{ post.baslik }}</a></h1>
+        <p>{{ post.yazi|linebreaksbr }}</p>
+    </div>
+{% endfor %}
+
+
+    </body>
 </html>
